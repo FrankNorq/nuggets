@@ -1,6 +1,20 @@
-import { asyncThunkCreator, buildCreateSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-// `buildCreateSlice` allows us to create a slice with async thunks.
-export const createAppSlice = buildCreateSlice({
-  creators: { asyncThunk: asyncThunkCreator },
+const counterSlice = createSlice({
+  name: "counter",
+  initialState:{value:0},
+  reducers: {
+    increment: (state)=>{
+      state.value += 1;
+    },
+    decrement: (state)=>{
+      state.value -= 1;
+    },
+    setCount: (state,action) => {
+      state.value = action.payload;
+    }
+    
+  }
 })
+export const {increment,decrement,setCount} = counterSlice.actions;
+export default counterSlice.reducer;
