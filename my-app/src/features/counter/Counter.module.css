@@ -21,7 +21,7 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.button {
+button {
   appearance: none;
   background: none;
   font-size: 32px;

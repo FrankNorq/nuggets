@@ -1,8 +1,5 @@
-import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import styles from "./Counter.module.css"
+import  "../counter/Counter.module.css"
 import {increment,decrement,setCount} from "../../app/createAppSlice"
 function CounterRender() {
     const dispatch = useDispatch()
@@ -11,6 +8,7 @@ function CounterRender() {
     return ( <div>
         <button onClick={()=>{dispatch(increment())}}>Increment</button>
         <button onClick={()=>{dispatch(decrement())}}>Decrement</button>
+        <button onClick={()=>{dispatch(setCount(0))}}>Reset button</button>
         <p>{count}</p>
         
     </div> );
